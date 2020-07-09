@@ -12,3 +12,7 @@ import App from './App';
 //       expect(false).toBe(false);
 //     });
 //   });
+
+test('App renders w/o crashing', () => {
+    render(<App />);
+});
