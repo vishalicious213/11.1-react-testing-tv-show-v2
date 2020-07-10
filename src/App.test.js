@@ -16,10 +16,14 @@ import App from './App';
 test('App renders w/o crashing', () => {
     render(<App />);
     screen.debug();
-    // expect(screen.getByText('Fetching data...')).toBeInTheDocument();
 });
 
 test('Render: Fetching data...', () => {
     render(<App />);
     expect(screen.getByText('Fetching data...')).toBeInTheDocument();
+});
+
+test('Stranger Things title should not be in DOM', () => {
+    render(<App />);
+    expect(screen.queryByText(/Stranger Things/)).toBeNull();
 });
