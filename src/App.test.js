@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from './App';
 
 // TEST SUITE TO MAKE SURE TESTING WORKS
@@ -15,4 +15,11 @@ import App from './App';
 
 test('App renders w/o crashing', () => {
     render(<App />);
+    screen.debug();
+    // expect(screen.getByText('Fetching data...')).toBeInTheDocument();
+});
+
+test('Render: Fetching data...', () => {
+    render(<App />);
+    expect(screen.getByText('Fetching data...')).toBeInTheDocument();
 });
